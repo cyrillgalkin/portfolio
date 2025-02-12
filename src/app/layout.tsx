@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import LocomotiveScrollProvider from '@/components/providers/locomotive-scroll-provider';
 import { cn } from '@/lib/utils';
 
 import './globals.css';
@@ -22,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn('antialiased', inter.className)}>{children}</body>
+      <body className={cn('antialiased', inter.className)}>
+        <LocomotiveScrollProvider>{children}</LocomotiveScrollProvider>
+      </body>
     </html>
   );
 }
